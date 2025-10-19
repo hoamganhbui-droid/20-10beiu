@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc Biu 20-10 Vui Vẻ 💞</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ffe0f0, #ffc2e0, #ff99cc);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+  }
+
+  h1 {
+    text-align: center;
+    color: #ff1f6b;
+    font-size: 3em;
+    margin-top: 80px;
+    text-shadow: 0 0 15px #ff6fa1;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff80b0, 0 0 20px #ff80b0; }
+    to { text-shadow: 0 0 20px #ff2f8a, 0 0 40px #ff2f8a; }
+  }
+
+  .message {
+    position: absolute;
+    color: #ff1f6b;
+    font-size: 1.2em;
+    font-weight: 600;
+    opacity: 0.9;
+    animation: floatMsg 10s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes floatMsg {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Trái tim nhỏ bay */
+  .heart {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff3366;
+    transform: rotate(45deg);
+    animation: floatHeart 6s ease-in infinite;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff3366;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -7.5px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: -7.5px;
+    top: 0;
+  }
+
+  @keyframes floatHeart {
+    0% {
+      transform: translateY(100vh) scale(0.6) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.2) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  /* Trái tim lớn giữa màn hình */
+  .big-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    background: #ff1f6b;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: spin 6s linear infinite;
+    box-shadow: 0 0 30px rgba(255, 47, 138, 0.8);
+  }
+
+  .big-heart::before,
+  .big-heart::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #ff1f6b;
+    border-radius: 50%;
+  }
+
+  .big-heart::before {
+    top: -60px;
+    left: 0;
+  }
+
+  .big-heart::after {
+    left: -60px;
+    top: 0;
+  }
+
+  @keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.1); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+  }
+
+  /* Nhạc nền */
+  audio {
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <h1>💞 Chúc Beiu 20-10 Vui Vẻ & Luôn Xinh Đẹp 💞</h1>
+
+  <div class="big-heart"></div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/14/audio_c2a0299c9c.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Các lời chúc dễ thương
+    const messages = [
+      "Chúc Beiu 20-10 vui vẻ và xinh như thiên thần 💖",
+      "Chúc em yêu luôn hạnh phúc và được yêu thương thật nhiều 💞",
+      "Mong mỗi ngày của Beiu đều ngọt ngào như hôm nay 🍬",
+      "Em là điều tuyệt vời nhất mà anh có 💘",
+      "Chúc em luôn cười thật tươi như ánh mặt trời 🌞",
+      "Beiu là đóa hoa đẹp nhất trong tim anh 🌸",
+      "Anh yêu em nhiều hơn những gì anh nói 💗",
+      "Mỗi ngày bên em là một món quà 💝",
+      "Chúc bé iu 20-10 hạnh phúc và luôn đáng yêu 💓",
+      "Yêu em đến hết cả bầu trời và xa hơn nữa 💫",
+      "Beiu là lý do để anh mỉm cười mỗi ngày 💋",
+      "Anh chúc cho em luôn an yên, hạnh phúc và xinh đẹp 💐",
+      "Em là công chúa của đời anh 👑",
+      "Chúc Beiu có một ngày đặc biệt – tràn ngập yêu thương 💞"
+    ];
+
+    // Tạo lời chúc bay ngẫu nhiên
+    function createMessage() {
+      const msg = document.createElement("div");
+      msg.className = "message";
+      msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+      msg.style.left = Math.random() * 80 + "vw";
+      msg.style.animationDuration = 8 + Math.random() * 6 + "s";
+      msg.style.fontSize = 1 + Math.random() * 0.5 + "em";
+      document.body.appendChild(msg);
+      setTimeout(() => msg.remove(), 12000);
+    }
+
+    // Tạo trái tim bay ngẫu nhiên
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+      heart.style.background = `hsl(${Math.random() * 30 + 340}, 80%, 60%)`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+
+    // Lặp tạo hiệu ứng
+    setInterval(createMessage, 2000);
+    setInterval(createHeart, 200);
+  </script>
+</body>
+</html>
